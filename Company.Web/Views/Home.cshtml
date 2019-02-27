@@ -1,0 +1,33 @@
+﻿
+<br />
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 header-text text-center">
+                <h5 class="mb-10">
+                @if (Session["IsAdmin"] != null)
+                {
+                    @Html.ActionLink("Users", "Index", "User");
+                    <span>||</span>
+                }
+
+                @Html.ActionLink("Sales", "Index", "Sale") ||
+                @Html.ActionLink("Purchases", "Index", "Purchase")</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 header-text text-center">
+                <h1 class="mb-10">Welcome @User.Identity.Name</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Sample Area -->
+<br />
+<br />
