@@ -23,29 +23,20 @@ namespace StoreLocator.Web
             "~/Scripts/jquery-ui.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Scripts/vendor/jquery-2.2.4.min.js",
-                        "~/Scripts/vendor/bootstrap.min.js",
-                        "~/Scripts/easing.min.js",
-                        "~/Scripts/hoverIntent.js",
-                        "~/Scripts/superfish.min.js",
-                        "~/Scripts/mn-accordion.js",
-                        "~/Scripts/jquery.ajaxchimp.min.js",
-                        "~/Scripts/jquery.magnific-popup.min.js",
+                        "~/Scripts/bootstrap.min.js",
                         "~/Scripts/owl.carousel.min.js",
-                        "~/Scripts/jquery.nice-select.min.js",
-                        "~/Scripts/jquery.circlechart.js",
-                        "~/Scripts/mail-script.js",
+                        "~/Scripts/jquery.stellar.min.js",
+                        "~/Scripts/jquery.waypoints.min.js",
+                        "~/Scripts/jquery.migrate-3.0.0.js",
+                        "~/Scripts/popper.min.js",
                         "~/Scripts/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/bootstrap/bootstrap.css",
-                    "~/Content/linearicons.css",
-                      "~/Content/font-awesome.min.css",                      
-                      "~/Content/magnific-popup.css",
-                      "~/Content/nice-select.css",
-                      "~/Content/animate.min.css",
-                      "~/Content/owl.carousel.css",
-                      "~/Content/main.css"));
+                    "~/Content/bootstrap.css",
+                    "~/Content/animate.css",
+                      "~/fonts/css/font-awesome.min.css",
+                      "~/Content/owl.carousel.min.css",
+                      "~/Content/style.css"));
         }
     }
 }
