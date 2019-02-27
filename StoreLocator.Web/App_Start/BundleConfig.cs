@@ -23,18 +23,20 @@ namespace StoreLocator.Web
             "~/Scripts/jquery-ui.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/jquery-3.2.1.min.js",
+                        "~/Scripts/jquery-migrate-3.0.0.js",
+                        "~/Scripts/popper.min.js",
                         "~/Scripts/bootstrap.min.js",
                         "~/Scripts/owl.carousel.min.js",
-                        "~/Scripts/jquery.stellar.min.js",
                         "~/Scripts/jquery.waypoints.min.js",
-                        "~/Scripts/jquery.migrate-3.0.0.js",
-                        "~/Scripts/popper.min.js",
+                        "~/Scripts/jquery.stellar.min.js",
                         "~/Scripts/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/bootstrap.css",
                     "~/Content/animate.css",
-                      "~/fonts/css/font-awesome.min.css",
+                      "~/fonts/fontawesome/css/font-awesome.min.css",
+                      "~/fonts/ionicons/css/ionicons.min.css",
                       "~/Content/owl.carousel.min.css",
                       "~/Content/style.css"));
         }

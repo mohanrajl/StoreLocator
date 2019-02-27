@@ -14,172 +14,208 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>GBDJB</title>
-    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <title>CHEAP DRINKS</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header id="header" id="home">
-        <div class="header-top">
+
+    <header role="banner">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                        <a href="#">+44 (0)7811 368478</a>
-                        <a href="#">banwoja@hotmail.com</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container main-menu">
-            <div class="row align-items-center justify-content-between d-flex">
-                <div id="logo">
-                    <a href="index.html"><img src="~/img/logo.png" alt="" title="" /></a>
-                </div>
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="menu-has-children">
-                            @Html.ActionLink("About", "Index", "About")
-                            <ul>
-                                <li>@Html.ActionLink("History", "History", "About")</li>
-                                <li>@Html.ActionLink("Partners", "Partners", "About")</li>
-                                <li>@Html.ActionLink("Vacancies", "Vacancies", "About")</li>
-                            </ul>
+                <a class="navbar-brand" href="index.html">CHEAP DRINKS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
-                        <li class="menu-has-children">
-                            @Html.ActionLink("Our Services", "Index", "Services")
-                            <ul>
-                                <li>@Html.ActionLink("Tax Consultancy", "TaxConsultancy", "Services")</li>
-                                <li>@Html.ActionLink("Accounting", "Accounting", "Services")</li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
-                        <li class="menu-has-children">
-                            @Html.ActionLink("News", "Index", "News")
-                            <ul>
-                                <li>@Html.ActionLink("Links", "Links", "News")</li>
-                            </ul>
-                        </li>
-                        <li class="menu-has-children">
-                            @Html.ActionLink("Contact", "Index", "Contact")
-                            <ul>
-                                <li>@Html.ActionLink("Legal Notice", "LegalNotice", "Contact")</li>
-                            </ul>
-                        </li>
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("Login", "Login", "Home")</li>
-                        }
-
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("User Home", "Home", "Home")</li>
-                            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>                            
-                        }
-
                     </ul>
-                </nav><!-- #nav-menu-container -->
+
+                </div>
             </div>
-        </div>
-    </header><!-- #header -->
-    <section class="banner-area relative" id="home">
-        <div class="overlay overlay-bg"></div>
+        </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../../img/big_image_1.jpg);">
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
-                    <br />
-                    <h6 class="text-uppercase text-white">Don’t look further, This is the Place for</h6>
-                    <br />
-                    <h2 class="text-white">
-                        ACCOUNTANCY & CONSULTANCY PROFESSIONAL SERVICES
-                    </h2>
+            <div class="row align-items-center site-hero-inner justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="mb-5 element-animate">
+                        <h1>Find your perfect place.</h1>
+                        <p>Discover &amp; connect with great places around the world.</p>
+                    </div>
+                    <form class="form-inline element-animate" id="search-form">
+                        <label for="s" class="sr-only">Location</label>
+                        <input type="text" class="form-control form-control-block search-input" id="autocomplete" placeholder="Search Location with Google Search API" onFocus="geolocate()">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End banner Area -->
+    <!-- END section -->
 
     @RenderBody()
 
-    <footer class="footer-area section-gap">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h6>Navigation Links</h6>
-                        <div class="row">
-                            <div class="col">
-                                <ul>
-                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("About", "Index", "About")</li>
-                                    <li>@Html.ActionLink("History", "History", "About")</li>
-                                    <li>@Html.ActionLink("Partners", "Partners", "About")</li>
-                                    <li>@Html.ActionLink("Vacancies", "Vacancies", "About")</li>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <ul>
-                                    <li>@Html.ActionLink("Our Services", "Index", "Services")</li>
-                                    <li>@Html.ActionLink("Tax Consultancy", "TaxConsultancy", "Services")</li>
-                                    <li>@Html.ActionLink("Accounting", "Accounting", "Services")</li>
-                                    <li>@Html.ActionLink("News", "Index", "News")</li>
-                                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h3 class="mb-4">About</h3>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod!</p>
+                    <ul class="list-unstyled ">
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">34 Street Name, City Name Here, United States</span></li>
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+1 242 4942 290</span></li>
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span class="">info@yourdomain.com</span></li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h6>Address</h6>
-                        <div class="row">
-                            <div class="col">
-                                <ul>
-                                    <li>GBDJB Accountancy & Consultancy Services</li>
-                                    <li>10 Brooklyn House,</li>
-                                    <li>31 Rillaton Walk</li>
-                                    <li>Milton Keynes</li>
-                                    <li>MK9 2BN</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-2">
+                    <h3 class="mb-4">Links</h3>
+                    <ul class="list-unstyled ">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h6>Office Hours</h6>
-                        <div class="row">
-                            <div class="col">
-                                <ul>
-                                    <li>Mon to Fri 9am to 6 pm</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-3">
+                    <h3 class="mb-4">Latest Blog</h3>
+                    <ul class="list-unstyled blog-entry-footer">
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>7 Best Destination in The World</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>4 Hour Work Week And The Rest Is Travel</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>Why You Should Travel Today</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Connect</h3>
+                    <p>
+                        <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                        <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                        <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                    </p>
                 </div>
             </div>
-            <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                <p class="col-lg-8 col-sm-12 footer-text m-0">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
                     <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- END footer -->
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214" /></svg></div>
 
+    @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
 
+    @*<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery-migrate-3.0.0.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/jquery.waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.stellar.min.js"></script>*@
+    @*@RenderSection("scripts", required: false)*@
+    <script>
+        // This example displays an address form, using the autocomplete feature
+        // of the Google Places API to help users fill in the information.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+        var placeSearch, autocomplete;
+        var componentForm = {
+            street_number: 'short_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
+        };
+
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                (document.getElementById('autocomplete')),
+                { types: ['geocode'] });
+
+            // When the user selects an address from the dropdown, populate the address
+            // fields in the form.
+            autocomplete.addListener('place_changed', fillInAddress);
+        }
+
+        function fillInAddress() {
+            // Get the place details from the autocomplete object.
+            var place = autocomplete.getPlace();
+
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
+
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                if (componentForm[addressType]) {
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById(addressType).value = val;
+                }
+            }
+        }
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"
+            async defer></script>
+    @*<script src="~/Scripts/main.js"></script>*@
 </body>
 </html>
